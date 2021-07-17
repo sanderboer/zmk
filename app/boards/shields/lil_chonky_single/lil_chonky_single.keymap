@@ -4,7 +4,6 @@
 / {
     keymap {
         compatible = "zmk,keymap";
-
         default_layer {
             bindings = <
     &kp 1    &kp 2    &kp 3    &kp 4     &kp 5
