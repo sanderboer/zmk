@@ -1,0 +1,6 @@
+if SHIELD_LIL_CHONKY_SINGLE
+
+config ZMK_KEYBOARD_NAME
+    default "Lil Chonky Boi single test version"
+
+endif
