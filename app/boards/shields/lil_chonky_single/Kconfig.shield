@@ -1,2 +1,0 @@
-config SHIELD_LIL_CHONKY_SINGLE
-    def_bool $(shields_list_contains,lil_chonky_single)
