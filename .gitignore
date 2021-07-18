@@ -5,7 +5,6 @@
 /zephyr
 /zmk-config
 /build
-build-left
-build-right
+build-*
 *.DS_Store
 __pycache__
