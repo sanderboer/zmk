@@ -1,0 +1,88 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+
+#define COLEMAK 0
+#define SYM 1
+#define NAV 2
+#define NUM 3
+#define MISC 4
+
+
+
+/ {
+   behaviors {
+             hm: homerow_mods {
+                 compatible = "zmk,behavior-hold-tap";
+                 label = "HOMEROW_MODS";
+                 #binding-cells = <2>;
+                 tapping-term-ms = <150>;
+                 quick_tap_ms = <0>;
+                 flavor = "tap-preferred";
+                 bindings = <&kp>, <&kp>;
+                 };
+   };
+
+    keymap {
+        compatible = "zmk,keymap";
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+         colemak {
+             bindings = <
+     &kp Q  &kp W       &kp F        &kp P          &kp B           &kp J        &kp L          &kp U          &kp Y       &kp ENTER
+     &kp A  &kp R       &kp S        &kp T          &kp G           &kp M        &kp N          &kp E          &kp I       &kp O
+     &kp Z  &hm LCTL X  &hm LSHIFT C &hm LALTR D    &hm LGUI V      &hm LGUI K   &hm LALT H     &hm LSHIFT DOT &LCTL COMMA &kp SLASH
+     &kp X  &kp X       &kp x        &lt NUM SPACE  &lt MISC BSPC   &lt NAV BSPC &lt SYM SPACE  &kp X          &kp X       &kp X
+             >;
+         };
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+         sym {
+            bindings = <
+&kp GT    &kp RBRC  &kp RBKT  &kp RPAR  &kp BSLH       &kp TILDE &kp CARET &kp MINUS &kp PLUS  &kp AT 
+&kp LT    &kp LBRC  &kp LBKT  &kp LPAR  &kp SLASH      &kp PRCNT &kp STAR  &kp COLON &kp SEMI  &kp DQT
+&kp HASH  &kp DLLR  &kp QMAR  &kp EXCL  &kp PIPE       &kp EQUAL &kp AMPS  &kp DOT   &kp COMMA &kp SQT
+&none    &none    &none    &kp SQT  &kp UNDER          &none    &none    &none    &none    &none
+            >;
+        };
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        nav {
+            bindings = <
+   &kp PG_UP    &none    &kp UP    &none       &kp LC(GRAVE)               &kp KP_MINUS  &kp KP_N7  &kp KP_N8   &kp KP_N9  &kp KP_EQUAL
+   &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &kp LG(GRAVE)               &kp KP_PLUS   &kp KP_N4  &kp KP_N5   &kp KP_N6  &kp KP_DOT
+   &kp K_APP     &kp HOME  &kp SPACE &kp END    &kp(LC(LA GRAVE))         &kp KP_N0    &kp KP_N1  &kp KP_N2   &kp KP_N3  &none
+   &none      &none    &none    &kp LCTL   &kp LGUI                      &none    &none  &none   &none  &none
+            >;
+        };
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        num {
+            bindings = <
+&kp MINS    &kp 7    &kp 8   &kp 9     &kp EQL                  &kp F1   &kp F2    &kp F3  &kp F4    &kp F5
+&kp KP_PLUS  &kp 4    &kp 5   &kp 6     &kp DOT                 &kp F6   &kp F7    &kp F8  &kp F9    &kp F1
+&kp 0        &kp 1    &kp 2   &kp 3     &kp COMMA               &none   &kp PSCR  &none  &kp F11   &kp F1
+&none       &none   &none  &kp TRNS  &kp TRNS                &kp TRNS&kp TRNS  &kp TRNS  &none  &none
+           >;
+        };
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        misc {
+            bindings = <
+&kp lg( 1)  &kp lg( 2)  &kp lg( 3)  &kp lg( 4)  &kp lg( 5)         &kp lg( 0)  RGB_TOG  RGB_MOD   RGB_VAI  RGB_M
+&kp lg( 6)  &kp lg( 7)  &kp lg( 8)  &kp lg( 9)  &kp VOLUP           &kp NLCK     &kp LALT  &kp LSFT   &kp LCTL  &kp MU
+RESET       &kp MPRV     &kp MPLY     &kp MNXT     &kp VOLDOWN         RGB_HUI     RGB_SAI  RGB_VAI   &none    &none
+&none       &none       &none       &none       &none              &none       &none    &none     &none    &none
+            >;
+        };
+    };
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+    };
+};
