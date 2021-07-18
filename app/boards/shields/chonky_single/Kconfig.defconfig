@@ -1,0 +1,6 @@
+if SHIELD_CHONKY_SINGLE
+
+config ZMK_KEYBOARD_NAME
+    default "Chonky Single"
+
+endif

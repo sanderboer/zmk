@@ -1,0 +1,60 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#define DEFAULT 0
+#define NUM     1
+#define SYM     2
+
+
+/ {
+   behaviors {
+             hm: homerow_mods {
+                 compatible = "zmk,behavior-hold-tap";
+                 label = "HOMEROW_MODS";
+                 #binding-cells = <2>;
+                 tapping-term-ms = <150>;
+                 quick_tap_ms = <0>;
+                 flavor = "tap-preferred";
+                 bindings = <&kp>, <&kp>;
+                 };
+   };
+
+    keymap {
+        compatible = "zmk,keymap";
+        default {
+            bindings = <
+    &kp A       &kp B       &kp C        &kp D       &kp E
+    &kp F       &kp G       &kp H        &kp I       &kp J
+    &hm LGUI K  &hm LALT L  &hm LSHIFT M &hm LCTL N  &kp O 
+    &lt NUM P   &lt SYM Q       &kp R        &kp S       &kp T
+            >;
+        };
+        num {
+            bindings = <
+    &kp N1   &kp N2   &kp N3   &kp N4    &kp N5
+    &kp N6   &kp N7   &kp N8   &kp N9    &kp N0
+    &kp N1   &kp N2   &kp N3   &kp N4    &kp N5
+    &kp N6   &kp N7   &kp N8   &kp N9    &kp N0
+            >;
+        };
+        sym {
+            bindings = <
+    &kp N1   &kp N2   &kp N3   &kp N4    &kp N5
+    &kp A    &kp B    &kp C    &kp D     &kp E
+    &kp F    &kp G    &kp H    &kp I     &kp J
+    &kp K    &kp L    &kp M    &kp N     &kp O
+            >;
+        };
+
+
+    };
+};
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_esc {
+            timeout-ms = <50>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+        };
+    };
+};
