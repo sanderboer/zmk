@@ -11,11 +11,11 @@ endif
 if SHIELD_LIL_CHONKY_BOIS_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "LIL Chonky Right"
+    default "Lil Chonky Right"
 
 endif
 
-if SHIELD_MY_BOARD_LEFT || SHIELD_MY_BOARD_RIGHT
+if SHIELD_LIL_CHONKY_BOIS_LEFT || SHIELD_LIL_CHONKY_BOIS_RIGHT
 
 config ZMK_SPLIT
     default y
