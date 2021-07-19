@@ -7,7 +7,9 @@ pushd $ROOTDIR
 source zephyr/zephyr-env.sh
 popd
 pushd $APPDIR
-west config build.dir-fmt "build-left"
+west config build.dir-fmt "build-reset"
+west build --pristine -b bluemicro840_v1 -- -DSHIELD=settings_reset
+wwest config build.dir-fmt "build-left"
 west build --pristine -b bluemicro840_v1 -- -DSHIELD=lil_chonky_bois_left
 west config build.dir-fmt "build-right"
 west build --pristine -b bluemicro840_v1 -- -DSHIELD=lil_chonky_bois_right
