@@ -11,7 +11,7 @@ endif
 if SHIELD_LIL_CHONKY_BOIS_RIGHT
 
 config ZMK_KEYBOARD_NAME
-    default "Lil Chonky Right"
+    default "Lil Chonky R"
 
 endif
 
