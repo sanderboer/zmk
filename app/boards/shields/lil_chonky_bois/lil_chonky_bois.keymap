@@ -37,7 +37,7 @@ colemak {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  sym {
  bindings = <
-&kp GT    &kp RBRC  &kp RBKT  &kp RPAR  &kp BSLH       &kp TILDE &kp CARET &kp MINUS &kp PLUS  &kp AT 
+&kp GT    &kp RBRC  &kp RBKT  &kp RPAR  &kp BSLH       &kp TILDE &kp CARET &kp MINUS &kp PLUS  &kp AT
 &kp LT    &kp LBRC  &kp LBKT  &kp LPAR  &kp SLASH      &kp PRCNT &kp STAR  &kp COLON &kp SEMI  &kp DQT
 &kp HASH  &kp DLLR  &kp QMARK &kp EXCL  &kp PIPE       &kp EQUAL &kp AMPS  &kp DOT   &kp COMMA &kp SQT
 &none     &none     &none     &kp SQT   &kp UNDER      &trans    &trans    &none     &none     &none
@@ -51,17 +51,17 @@ colemak {
  &kp K_APP &kp HOME &kp SPACE &kp END   &kp(LC(LA GRAVE))  &kp KP_N0    &kp KP_N1 &kp KP_N2 &kp KP_N3 &bt BT_SEL
  &none     &none    &none     &kp LCTL  &kp LGUI           &trans       &trans     &none     &none     &none
  >;};
-      
+
 
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         num {
               bindings = <
  &kp MINUS &kp N7 &kp N8 &kp N9 &kp EQUAL     &kp F1  &kp F2    &kp F3  &kp F4  &kp F5
- &kp PLUS  &kp N4 &kp N5 &kp N6 &kp DOT       &kp F6  &kp F7    &kp F8  &kp F9  &kp F10
+ &kp PLUS  &kp N4 &kp N5 &kp N6 &kp KP_DOT    &kp F6  &kp F7    &kp F8  &kp F9  &kp F10
  &kp N0    &kp N1 &kp N2 &kp N3 &kp COMMA     &none   &kp PSCRN &none   &kp F11 &kp F12
  &none     &none  &none  &trans &trans        &trans  &trans    &none   &none   &none
   >;};
-     
+
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         misc {
               bindings = <
@@ -70,7 +70,7 @@ colemak {
  &bt BT_CLR &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp C_VOL_DN   &none       &none &none &none &none
  &none     &none      &none     &trans      &trans            &trans      &trans &none &none &none
            >;};
-  
+
 
 
   };
