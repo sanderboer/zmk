@@ -7,7 +7,7 @@ pushd $ROOTDIR
 source zephyr/zephyr-env.sh
 popd
 pushd $APPDIR
-west config build.dir-fmt "build-reset" && west build --pristine -b nice_nano_v2 -- -DSHIELD=settings_reset
-west config build.dir-fmt "build-left" && west build --pristine -b nice_nano_v2 -- -DSHIELD=lil_curvy_bois_left
-west config build.dir-fmt "build-right" && west build --pristine -b nice_nano_v2 -- -DSHIELD=lil_curvy_bois_right
+west config build.dir-fmt "build_curvybois/reset" && west build --pristine -b nice_nano_v2 -- -DSHIELD=settings_reset
+west config build.dir-fmt "build_curvybois/left" && west build --pristine -b nice_nano_v2 -- -DSHIELD=lil_curvy_bois_left
+west config build.dir-fmt "build_curvybois/right" && west build --pristine -b nice_nano_v2 -- -DSHIELD=lil_curvy_bois_right
 popd

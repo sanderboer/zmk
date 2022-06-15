@@ -4,10 +4,11 @@
 #include <dt-bindings/zmk/outputs.h>
 
 #define COLEMAK 0
-#define SYM 1
-#define NAV 2
-#define NUM 3
-#define MISC 4
+#define QWERTY 1
+#define SYM 2
+#define NAV 3
+#define NUM 4
+#define MISC 5
 
 / {
    behaviors {
@@ -29,13 +30,23 @@ colemak {
  bindings = <
  &kp Q &kp W       &kp F       &kp P      &kp B        &kp J      &kp L      &kp U         &kp Y           &kp ENTER
  &kp A &kp R       &kp S       &kp T      &kp G        &kp M      &kp N      &kp E         &kp I           &kp O
- &kp Z &hm LCTRL X &hm LSHFT C &hm LALT D &hm LGUI V   &hm LGUI K &hm LALT H &hm LSHFT DOT &hm LCTRL COMMA &kp SLASH
+ &kp Z &hm LCTRL X &hm LSHFT C &hm LALT D &hm LGUI V   &hm RGUI K  &hm RALT H &hm RSHFT DOT &hm RCTRL COMMA &kp SLASH
  &none &none &none        &lt NUM SPACE  &lt MISC BSPC &lt SYM BSPC &lt NAV SPACE &none &none &none
              >;
              };
-
+             
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
- sym {
+qwerty {
+ bindings = <
+ &kp Q &kp W       &kp E       &kp R      &kp T        &kp Y      &kp U      &kp I         &kp O           &kp P
+ &kp A &kp S       &kp D       &kp F      &kp G        &kp H      &kp J      &kp K         &kp L           &kp ENTER
+ &kp Z &hm LCTRL X &hm LSHFT C &hm LALT V &hm LGUI B   &hm RGUI N &hm RALT M &hm LSHFT DOT &hm LCTRL COMMA &kp SLASH
+ &none &none &none             &kp SPACE  &kp BSPC     &lt SYM BSPC   &lt NAV SPACE &none &none &none
+             >;
+             };
+             
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+sym {
  bindings = <
 &kp GT    &kp RBRC  &kp RBKT  &kp RPAR  &kp BSLH       &kp TILDE &kp CARET &kp MINUS &kp PLUS  &kp AT 
 &kp LT    &kp LBRC  &kp LBKT  &kp LPAR  &kp SLASH      &kp PRCNT &kp STAR  &kp COLON &kp SEMI  &kp DQT
@@ -70,9 +81,6 @@ colemak {
  &bt BT_CLR &kp C_PREV  &kp C_PP   &kp C_NEXT  &kp C_VOL_DN   &none       &none &none &none &none
  &none     &none      &none     &trans      &trans            &trans      &trans &none &none &none
            >;};
-  
-
-
   };
 };
 
@@ -89,10 +97,15 @@ colemak {
             key-positions = <3 4>;
             bindings = <&kp TAB>;
             };
-        combo_del {
+         combo_del {
             timeout-ms = <50>;
             key-positions = <5 6>;
             bindings = <&kp DEL>;
+        };
+        combo_tog {
+            timeout-ms = <50>;
+            key-positions = <10 11>;
+            bindings = <&tog QWERTY>;
         };
     };
 };
